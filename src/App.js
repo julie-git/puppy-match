@@ -7,10 +7,8 @@ import React from 'react';
 // import { faHome } from "@fortawesome/free-solid-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-// import './App.css';
+import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import NavTabs from "./components/NavTabs";
-// import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 // import Search from "./components/pages/Search";
 import Quiz from "./components/pages/Quiz";

@@ -11,6 +11,8 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "framer-motion": "^1.8.4",
+    "jquery": "^3.4.1",
+    "materialize-css": "^1.0.0-rc.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-materialize": "^3.5.9",

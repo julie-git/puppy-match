@@ -16,7 +16,7 @@ class QuizContainer extends Component {
                    <div className="col-md-12">
                        <h2>Quiz</h2>
                    </div>
-
+                
                </div>
            
             <div>

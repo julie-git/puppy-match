@@ -1,7 +1,19 @@
-import React, { Component } from "react";
+import React, { Component,Redirect } from "react";
 import { Link } from "react-router-dom";
 import M from 'materialize-css';
 import { Button, Card, Row, Col } from 'react-materialize';
+import Search from "../pages/Search"
+import { useHistory } from 'react-router-dom';
+
+// import { makeStyles } from '@material-ui/core/styles';
+// import Radio from '@material-ui/core/Radio';
+// import RadioGroup from '@material-ui/core/RadioGroup';
+// import FormHelperText from '@material-ui/core/FormHelperText';
+// import FormControlLabel from '@material-ui/core/FormControlLabel';
+// // import FormControl from '@material-ui/core/FormControl';
+// import { FormControl } from '@material-ui/core';
+// import { withStyles } from "@material-ui/core/styles"
+// import FormLabel from '@material-ui/core/FormLabel';
 
 
 class Quiz extends Component {
@@ -13,7 +25,8 @@ class Quiz extends Component {
     q3: '',
     q4: '',
     q5: '',
-    breed: ''
+    breed: '',
+    redirectToNewPage: true
   }
 
 
@@ -21,27 +34,31 @@ class Quiz extends Component {
     event.preventDefault();
 
     console.log("clicked submit handler");
-    //add quiz logic 
-    console.log(this.state.q1);
-    console.log(this.state.q2);
-    console.log(this.state.q3);
-    console.log(this.state.q4);
-    console.log(this.state.q5);
-
-    // this.handleInputChange([this.breed] , "s");
-    // this.state.breed.setState(this.calculateBreed());
-    this.setState({
-      breed: this.calculateBreed()
-    })
+    
+    // this.setState({
+    //   [this.state.breed] : this.calculateBreed()
+    // })
     // this.state.setState.breed.setState(this.calculateBreed);
-    console.log(this.state.breed);
-    // <Link
-    //       to={{
-    //         pathname: "/Search",
-    //          data: "shihtzu"
-    //       }}
-    //     ></Link>
+    let setBreed = this.calculateBreed();
+    console.log("===retrurn from calcodgbreed")
+    //  console.log(this.state.breed);
+    //  localStorage.setItem("breed", this.state.breed);
+    console.log(setBreed);
+     localStorage.setItem("breed", setBreed);
+    //   this.setState({redirectToNewPage : true});
+    //  console.log("*****redirect***")
 
+    // let path = `search`;
+    //  let history = useHistory();
+    //  history.push(path);
+
+
+    // console.log(this.state.redirectToNewPage);
+    // if (this.state.redirectToNewPage) {
+    //   return (
+    //   <Redirect to="/search"/>
+    //   )
+    // }
   }
 
 
@@ -77,19 +94,19 @@ class Quiz extends Component {
     //figure out breedname
     switch (item) {
       case "s":
-        pickBreed = "shitzu";
+        pickBreed = "shihtzu";
         //  this.state.breed.setState("shitzu");
         break;
       case "l":
         pickBreed = "labrador";
         // this.state.breed.setState("labrador");
         break;
-      case "y":
-        pickBreed = "yorkie";
+      case "c":
+        pickBreed = "chihuahua";
         // this.state.breed.setState("yorkie");
         break;
       case "b":
-        pickBreed = "bordercollie";
+        pickBreed = "beagle";
         //     this.state.breed.setState("bordercollie");
         break;
       default:
@@ -98,31 +115,34 @@ class Quiz extends Component {
     }
 
     // this.state.breed.setState(pickBreed);
-    // console.log(this.state.breed);
+     console.log(pickBreed);
 
-    return pickBreed;
-    // return this.state.breed;
+     return pickBreed;
+    
 
   }
 
 
   render() {
     return (
-      <div>
-        <h1>Take the Pup Match Quiz</h1>
-
+      <div className="container">
+            
+        <Row>
+        <h1 className="materialize-red 2">Take the Pup Match Quiz</h1>
+        </Row>
 
         <form onSubmit={this.handleFormSubmit}>
-
+        {/* <FormControl component="fieldset" className={classes.formControl}> */}
           <label>
             What is your ideal Pup Size?
          </label>
           <div className="radio">
             <label>
-              <input onChange={this.handleInputChange} type="radio" name="q1" value="y" />
+              <input onChange={this.handleInputChange} type="radio" name="q1" value="c" />
               xtra small - I like to carry my pup in my purse or backpack
           </label>
           </div>
+          {/* </FormControl> */}
 
           <div className="radio">
             <label>
@@ -161,7 +181,7 @@ class Quiz extends Component {
           </div>
           <div className="radio">
             <label>
-              <input onChange={this.handleInputChange} type="radio" name="q2" value="y" />
+              <input onChange={this.handleInputChange} type="radio" name="q2" value="c" />
               Getting together with friends
           </label>
           </div>
@@ -178,26 +198,26 @@ class Quiz extends Component {
           <div className="radio">
 
             <label>
-              <input onChange={this.handleInputChange} type="radio" name="q3" value="y" />
-              Vintage champagne with aged cheese plate
+              <input onChange={this.handleInputChange} type="radio" name="q3" value="c" />
+              Street tacos and a margarita
           </label>
           </div>
           <div className="radio">
             <label>
               <input onChange={this.handleInputChange} type="radio" name="q3" value="b" />
-              Fast Food Big Mac Meal Deal
+              Big Mac Meal Deal
           </label>
           </div>
           <div className="radio">
             <label>
               <input onChange={this.handleInputChange} type="radio" name="q3" value="s" />
-              Rich chocolate cake with a glass of milk
+              Vintage champagne with aged cheese plate
           </label>
           </div>
           <div className="radio">
             <label>
               <input onChange={this.handleInputChange} type="radio" name="q3" value="l" />
-              Pepperonini Pizza and beer
+              Pepperoni Pizza and beer
           </label>
           </div>
 
@@ -206,7 +226,7 @@ class Quiz extends Component {
          </label>
           <div className="radio">
             <label>
-              <input onChange={this.handleInputChange} type="radio" name="q4" value="y" />
+              <input onChange={this.handleInputChange} type="radio" name="q4" value="c" />
               Everyday I tidy up
           </label>
           </div>
@@ -240,34 +260,32 @@ class Quiz extends Component {
           </div>
           <div className="radio">
             <label>
-              <input onChange={this.handleInputChange} type="radio" name="q5" value="y" />
-              Secret Life Of Pets
+              <input onChange={this.handleInputChange} type="radio" name="q5" value="c" />
+              Beverley Hills Chihuahua
           </label>
           </div>
           <div className="radio">
             <label>
               <input onChange={this.handleInputChange} type="radio" name="q5" value="s" />
-              Benji
+              Secret Life of Pets
           </label>
           </div>
           <div className="radio">
             <label>
               <input onChange={this.handleInputChange} type="radio" name="q5" value="b" />
-              Bolt
+              Shiloh
           </label>
           </div>
 
           <button className="btn btn-default" type="submit" onClick="handleFormSubmit()">Submit</button>
-
+          {/* <Link to="/search"><button type="submit"onClick="handleFormSubmit()" >Submit</button></Link>   */}
+          {/* <Link to="/search" className="btn btn-primary" type="submit">Submit</Link> */}
+          {/* <Link  to={{pathname: "/Search", data: "shihtzu" }} ></Link> */}
         </form>
-        {/* <Link
-          to={{
-            pathname: "/Search",
-             data: "shihtzu"
-          }}
-        ></Link> */}
+        {/* <Link  to={{pathname: "/Search", data: "shihtzu" }} ></Link> */}
 
       </div>
+      
     );
   }
 

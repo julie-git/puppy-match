@@ -1,9 +1,8 @@
-import React, { Component,Redirect } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from "react";
+import { Link,useHistory,Redirect } from "react-router-dom";
 import M from 'materialize-css';
 import { Button, Card, Row, Col } from 'react-materialize';
 import Search from "../pages/Search"
-import { useHistory } from 'react-router-dom';
 
 // import { makeStyles } from '@material-ui/core/styles';
 // import Radio from '@material-ui/core/Radio';
@@ -26,7 +25,7 @@ class Quiz extends Component {
     q4: '',
     q5: '',
     breed: '',
-    redirectToNewPage: true
+    redirectToNewPage: false
   }
 
 
@@ -45,7 +44,8 @@ class Quiz extends Component {
     //  localStorage.setItem("breed", this.state.breed);
     console.log(setBreed);
      localStorage.setItem("breed", setBreed);
-    //   this.setState({redirectToNewPage : true});
+
+      this.setState({redirectToNewPage : true});
     //  console.log("*****redirect***")
 
     // let path = `search`;
@@ -126,7 +126,7 @@ class Quiz extends Component {
   render() {
     return (
       <div className="container">
-            
+        {this.state.redirectToNewPage&&<Redirect to="/search"/>}
         <Row>
         <h1 className="materialize-red 2">Take the Pup Match Quiz</h1>
         </Row>
@@ -277,7 +277,7 @@ class Quiz extends Component {
           </label>
           </div>
 
-          <button className="btn btn-default" type="submit" onClick="handleFormSubmit()">Submit</button>
+          <button className="btn btn-default" type="submit" >Submit</button>
           {/* <Link to="/search"><button type="submit"onClick="handleFormSubmit()" >Submit</button></Link>   */}
           {/* <Link to="/search" className="btn btn-primary" type="submit">Submit</Link> */}
           {/* <Link  to={{pathname: "/Search", data: "shihtzu" }} ></Link> */}

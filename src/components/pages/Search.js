@@ -8,23 +8,38 @@ import SearchResults from "../SearchResults";
 class Search extends Component {
   state = {
     search: "",
-    breeds: "",
+    breed: "",
     results: [],
     error: "",
-    profile: "Shih Tzu"
+    profile: "",
+    description:""
   };
 
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {
+  //     search: "",
+  //   breed: "",
+  //   results: [],
+  //   error: "",
+  //   profile: "",
+  //   description:""
+      
+  //     }
+  // }
  
 
-//  breedpick = Quiz.getDogsOfBreed();
+
 
    breedprofile(){
      let breed = localStorage.getItem("breed");
       let profile="";
+      let description="";
     switch (breed) {
       case "shihtzu":
-        profile= "Shih Tzu"
-       
+        profile= "Your a Princess/Prince";
+        breed = "Shih Tzu"
+        description = "";
         break;
       case "labrador":
         profile = "Labrador";
@@ -43,7 +58,7 @@ class Search extends Component {
 
     }
 
-   
+     this.state.breed.setState(breed);
     return profile;
    }
 

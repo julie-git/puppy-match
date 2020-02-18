@@ -11,8 +11,9 @@ class Search extends Component {
     breed: "",
     results: [],
     error: "",
+    breedname: "",
     profile: "",
-    description:""
+    description: ""
   };
 
   // constructor(props) {
@@ -24,43 +25,61 @@ class Search extends Component {
   //   error: "",
   //   profile: "",
   //   description:""
-      
+
   //     }
   // }
- 
 
 
 
-   breedprofile(){
-     let breed = localStorage.getItem("breed");
-      let profile="";
-      let description="";
+
+  breedprofile() {
+    let breed = localStorage.getItem("breed");
+    let profile = "";
+    let description = "";
+    let breedname = "";
+    console.log("****breedprofile***");
+    console.log(breed);
+
+
     switch (breed) {
       case "shihtzu":
-        profile= "Your a Princess/Prince";
-        breed = "Shih Tzu"
-        description = "";
+        profile = "Your a Playful Cuddle Bug";
+        breedname = "Shih Tzu"
+        description = "You love luxury and lounging around ";
         break;
       case "labrador":
-        profile = "Labrador";
-        
+        profile = "Your a Jock"
+        breedname = "Labrador";
+        description = "lab description";
         break;
       case "chihuahua":
-        profile = "Chihuaha";
-      
+        profile = "Your a Princess/Prince";
+        breedname = "Chihuaha";
+        description = "Chi description";
         break;
       case "beagle":
         profile = "Beagle";
-       
+        breedname = "Labrador";
+        description = "lab description";
         break;
       default:
-        profile= "Shih Tzu";
+        profile = "Your a Playful Cuddle Bug";
+        breedname = "Shih Tzu"
+        description = "You love luxury and lounging around ";
 
     }
+    console.log(profile);
+    console.log(breedname);
 
-     this.state.breed.setState(breed);
+    this.setState({ profile: profile });
+    this.setState({ breedname: breedname });
+    this.setState({ description: description });
+
+    console.log(this.state.profile);
+    console.log(this.state.breedname);
+    console.log(this.state.description);
     return profile;
-   }
+  }
 
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
   componentDidMount() {
@@ -72,41 +91,42 @@ class Search extends Component {
     // API.getDogsOfBreed(this.state.search)
     //   .then(res => this.setState({ results: res.data.message }))
     //   .catch(err => console.log(err));
-      // console.log(this.state.search);
-     let setbreed = localStorage.getItem("breed");
-       console.log(setbreed)
-      // this.state.setState({search : setbreed})
+    // console.log(this.state.search);
+    let setbreed = localStorage.getItem("breed");
+    console.log(setbreed)
+    // this.state.setState({search : setbreed})
 
-      // API.getDogsOfBreed(this.state.search)
-      API.getDogsOfBreed(setbreed)
+    // API.getDogsOfBreed(this.state.search)
+    API.getDogsOfBreed(setbreed)
       .then(res => {
         if (res.data.status === "error") {
           throw new Error(res.data.message);
         }
         this.setState({ results: res.data.message, error: "" });
         console.log(this.state.results);
-        this.setState({ results: this.state.results.slice(1,2),error:"" });
-        
-        
+        this.setState({ results: this.state.results.slice(1, 2), error: "" });
+        this.breedprofile();
+
       })
       .catch(err => this.setState({ error: err.message }));
-  
+
   }
 
   // handleInputChange = event => {
   //   this.setState({ search: event.target.value });
   // };
 
- 
+
   render() {
     return (
       <div>
         {/* <Container style={{ minHeight: "80%" }}> */}
-          <h1 className="text-center">{this.state.profile}</h1>
-          
-          
-         
-          <SearchResults results={this.state.results} />
+        <h1 className="text-center">{this.state.breedname}</h1>
+        <p>{this.state.description}</p>
+
+
+
+        <SearchResults results={this.state.results} />
         {/* </Container> */}
       </div>
     );

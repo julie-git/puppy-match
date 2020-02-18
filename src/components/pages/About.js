@@ -16,16 +16,13 @@ function About() {
         <h1>Pup Match</h1>
         <h2>Dog Breed Matchmaker</h2>
       </div>
-      
-     
+   
       <Link to="/quiz"><button type="button"> Take the Quiz!</button></Link>  
 
-      
-        
                
-         <div>
+         {/* <div>
    <FontAwesomeIcon icon={faHome} />
-   </div> 
+   </div>  */}
      
      </div>
    );

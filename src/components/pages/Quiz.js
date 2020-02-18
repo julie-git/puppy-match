@@ -1,8 +1,15 @@
 import React, { Component } from "react";
 import { Link,useHistory,Redirect } from "react-router-dom";
 import M from 'materialize-css';
-import { Button, Card, Row, Col } from 'react-materialize';
+// import { Button, Card, Row, Col } from 'react-materialize';
 import Search from "../pages/Search"
+import clsx from 'clsx';
+import { makeStyles } from '@material-ui/core/styles';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
 
 // import { makeStyles } from '@material-ui/core/styles';
 // import Radio from '@material-ui/core/Radio';
@@ -16,8 +23,7 @@ import Search from "../pages/Search"
 
 
 class Quiz extends Component {
-  // breed = [];
-
+ 
   state = {
     q1: '',
     q2: '',
@@ -37,7 +43,7 @@ class Quiz extends Component {
     // this.setState({
     //   [this.state.breed] : this.calculateBreed()
     // })
-    // this.state.setState.breed.setState(this.calculateBreed);
+    
     let setBreed = this.calculateBreed();
     console.log("===retrurn from calcodgbreed")
     //  console.log(this.state.breed);
@@ -95,15 +101,15 @@ class Quiz extends Component {
     switch (item) {
       case "s":
         pickBreed = "shihtzu";
-        //  this.state.breed.setState("shitzu");
+        
         break;
       case "l":
         pickBreed = "labrador";
-        // this.state.breed.setState("labrador");
+        
         break;
       case "c":
         pickBreed = "chihuahua";
-        // this.state.breed.setState("yorkie");
+        
         break;
       case "b":
         pickBreed = "beagle";
@@ -127,10 +133,9 @@ class Quiz extends Component {
     return (
       <div className="container">
         {this.state.redirectToNewPage&&<Redirect to="/search"/>}
-        <Row>
-        <h1 className="materialize-red 2">Take the Pup Match Quiz</h1>
-        </Row>
-
+        
+        <h1>Take the Pup Match Quiz</h1>
+     
         <form onSubmit={this.handleFormSubmit}>
         {/* <FormControl component="fieldset" className={classes.formControl}> */}
           <label>
@@ -278,11 +283,9 @@ class Quiz extends Component {
           </div>
 
           <button className="btn btn-default" type="submit" >Submit</button>
-          {/* <Link to="/search"><button type="submit"onClick="handleFormSubmit()" >Submit</button></Link>   */}
-          {/* <Link to="/search" className="btn btn-primary" type="submit">Submit</Link> */}
-          {/* <Link  to={{pathname: "/Search", data: "shihtzu" }} ></Link> */}
+         
         </form>
-        {/* <Link  to={{pathname: "/Search", data: "shihtzu" }} ></Link> */}
+       
 
       </div>
       

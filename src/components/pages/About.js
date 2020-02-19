@@ -17,12 +17,9 @@ function About() {
         <h2>Dog Breed Matchmaker</h2>
       </div>
    
-      <Link to="/quiz"><button type="button"> Take the Quiz!</button></Link>  
+      <Link to="/quiz"><button type="button">  <i class="fas fa-paw"></i> Take the Quiz!</button></Link>  
 
-               
-         {/* <div>
-   <FontAwesomeIcon icon={faHome} />
-   </div>  */}
+    
      
      </div>
    );

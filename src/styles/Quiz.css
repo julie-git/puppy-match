@@ -1,0 +1,23 @@
+.container{
+    background-image: url("../images/NoahRelax.jpg"); 
+    /* position: absolute; */
+    background-repeat: no-repeat;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* width: 300px; */
+    width: 100%;
+    /* text-align: center; */
+    color: black;
+    height: 100vh;
+    margin:0;
+    font-size: x-large;
+}
+
+.h1over{
+    text-align: center;
+}
+
+
+
+

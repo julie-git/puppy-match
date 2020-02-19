@@ -18,16 +18,13 @@ function App() {
   return (
     <Router>
       <div>
-        {/* <NavTabs /> */}
         <Route exact path="/" component={About} />
-         <Route exact path="/about" component={About} />}
+        <Route exact path="/about" component={About} />
         <Route exact path="/quiz" component={Quiz} />
         <Route exact path="/search" component={Search} />
-        {/* <Route path='/search/:handle' component={Search} /> */}
-        {/* <Route path='/handle' component={Search}/> */}
       </div>
     </Router>
-  );
+  )
 }
 
 export default App;

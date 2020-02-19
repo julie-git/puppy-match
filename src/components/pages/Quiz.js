@@ -1,29 +1,23 @@
 import React, { Component } from "react";
-import { Link,useHistory,Redirect } from "react-router-dom";
-import M from 'materialize-css';
+import { Link, useHistory, Redirect } from "react-router-dom";
+import "../../styles/Quiz.css"
+//import M from 'materialize-css';
 // import { Button, Card, Row, Col } from 'react-materialize';
 import Search from "../pages/Search"
+import Grid from '@material-ui/core/Grid';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
+
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 
-// import { makeStyles } from '@material-ui/core/styles';
-// import Radio from '@material-ui/core/Radio';
-// import RadioGroup from '@material-ui/core/RadioGroup';
-// import FormHelperText from '@material-ui/core/FormHelperText';
-// import FormControlLabel from '@material-ui/core/FormControlLabel';
-// // import FormControl from '@material-ui/core/FormControl';
-// import { FormControl } from '@material-ui/core';
-// import { withStyles } from "@material-ui/core/styles"
-// import FormLabel from '@material-ui/core/FormLabel';
 
 
 class Quiz extends Component {
- 
+
   state = {
     q1: '',
     q2: '',
@@ -35,36 +29,24 @@ class Quiz extends Component {
   }
 
 
+
   handleFormSubmit = event => {
     event.preventDefault();
 
     console.log("clicked submit handler");
-    
+
     // this.setState({
     //   [this.state.breed] : this.calculateBreed()
     // })
-    
+
     let setBreed = this.calculateBreed();
     console.log("===retrurn from calcodgbreed")
     //  console.log(this.state.breed);
     //  localStorage.setItem("breed", this.state.breed);
     console.log(setBreed);
-     localStorage.setItem("breed", setBreed);
+    localStorage.setItem("breed", setBreed);
+    this.setState({ redirectToNewPage: true });
 
-      this.setState({redirectToNewPage : true});
-    //  console.log("*****redirect***")
-
-    // let path = `search`;
-    //  let history = useHistory();
-    //  history.push(path);
-
-
-    // console.log(this.state.redirectToNewPage);
-    // if (this.state.redirectToNewPage) {
-    //   return (
-    //   <Redirect to="/search"/>
-    //   )
-    // }
   }
 
 
@@ -101,19 +83,19 @@ class Quiz extends Component {
     switch (item) {
       case "s":
         pickBreed = "shihtzu";
-        
+
         break;
       case "l":
         pickBreed = "labrador";
-        
+
         break;
       case "c":
         pickBreed = "chihuahua";
-        
+
         break;
       case "b":
         pickBreed = "beagle";
-        //     this.state.breed.setState("bordercollie");
+
         break;
       default:
         pickBreed = "shihtzu";
@@ -121,174 +103,178 @@ class Quiz extends Component {
     }
 
     // this.state.breed.setState(pickBreed);
-     console.log(pickBreed);
+    console.log(pickBreed);
 
-     return pickBreed;
-    
+    return pickBreed;
+
 
   }
 
 
   render() {
     return (
+
       <div className="container">
-        {this.state.redirectToNewPage&&<Redirect to="/search"/>}
-        
-        <h1>Take the Pup Match Quiz</h1>
-     
-        <form onSubmit={this.handleFormSubmit}>
-        {/* <FormControl component="fieldset" className={classes.formControl}> */}
-          <label>
-            What is your ideal Pup Size?
+        {this.state.redirectToNewPage && <Redirect to="/search" />}
+        <h1 className="h1over">Pup Match Quiz</h1>
+        <Grid container justify="center">
+          
+
+          <form onSubmit={this.handleFormSubmit}>
+
+            <label>
+              1. What is your ideal Pup Size?
          </label>
-          <div className="radio">
-            <label>
-              <input onChange={this.handleInputChange} type="radio" name="q1" value="c" />
-              xtra small - I like to carry my pup in my purse or backpack
+            <div className="radio">
+              <label>
+                <input onChange={this.handleInputChange} type="radio" name="q1" value="c" />
+                Xtra Small - I like to carry my pup in my purse or backpack
           </label>
-          </div>
-          {/* </FormControl> */}
+            </div>
 
-          <div className="radio">
-            <label>
-              <input onChange={this.handleInputChange} type="radio" name="q1" value="s" />
-              small - I want to be able to carry my pup around and snuggle up
+
+            <div className="radio">
+              <label>
+                <input onChange={this.handleInputChange} type="radio" name="q1" value="s" />
+                Small - I want to be able to carry my pup around and snuggle up
           </label>
-          </div>
-          <div className="radio">
-            <label>
-              <input onChange={this.handleInputChange} type="radio" name="q1" value="b" />
-              medium - I want my pup to be active, but not too small
+            </div>
+            <div className="radio">
+              <label>
+                <input onChange={this.handleInputChange} type="radio" name="q1" value="b" />
+                Medium - I want my pup to be active, but not too small
           </label>
-          </div>
-          <div className="radio">
-            <label>
-              <input onChange={this.handleInputChange} type="radio" name="q1" value="l" />
-              large - I want more to love with a big bundle of joy
+            </div>
+            <div className="radio">
+              <label>
+                <input onChange={this.handleInputChange} type="radio" name="q1" value="l" />
+                Large - I want a big bundle of joy, more to love
           </label>
-          </div>
-          {/* question 2 */}
-          <label>
-            2.  It's Friday Night, What's the Plan?
+            </div>
+
+            <label>
+              2.  It's Friday Night, What's the Plan?
          </label>
-          <div className="radio">
+            <div className="radio">
+
+              <label>
+                <input onChange={this.handleInputChange} type="radio" name="q2" value="s" />
+                A tall glass of wine, a good read, and snuggles with my pup
+          </label>
+            </div>
+            <div className="radio">
+              <label>
+                <input onChange={this.handleInputChange} type="radio" name="q2" value="l" />
+                A 5-mile run, and out to dinner
+          </label>
+            </div>
+            <div className="radio">
+              <label>
+                <input onChange={this.handleInputChange} type="radio" name="q2" value="c" />
+                Getting together with friends
+          </label>
+            </div>
+            <div className="radio">
+              <label>
+                <input onChange={this.handleInputChange} type="radio" name="q2" value="b" />
+                A game of pickup basketball, beers with the guys
+          </label>
+            </div>
 
             <label>
-              <input onChange={this.handleInputChange} type="radio" name="q2" value="s" />
-              A tall glass of wine, a good read, and snuggles with my pup
-          </label>
-          </div>
-          <div className="radio">
-            <label>
-              <input onChange={this.handleInputChange} type="radio" name="q2" value="l" />
-              A 5-mile run, and out to dinner
-          </label>
-          </div>
-          <div className="radio">
-            <label>
-              <input onChange={this.handleInputChange} type="radio" name="q2" value="c" />
-              Getting together with friends
-          </label>
-          </div>
-          <div className="radio">
-            <label>
-              <input onChange={this.handleInputChange} type="radio" name="q2" value="b" />
-              A game of pickup basketball, beers with the guys
-          </label>
-          </div>
-          {/* Question 3 */}
-          <label>
-            3. My Favorite Foods are ?
+              3. My Favorite Foods are ?
          </label>
-          <div className="radio">
+            <div className="radio">
+
+              <label>
+                <input onChange={this.handleInputChange} type="radio" name="q3" value="c" />
+                Street tacos and a margarita
+          </label>
+            </div>
+            <div className="radio">
+              <label>
+                <input onChange={this.handleInputChange} type="radio" name="q3" value="b" />
+                Big Mac Meal Deal
+          </label>
+            </div>
+            <div className="radio">
+              <label>
+                <input onChange={this.handleInputChange} type="radio" name="q3" value="s" />
+                Vintage champagne with aged cheese plate
+          </label>
+            </div>
+            <div className="radio">
+              <label>
+                <input onChange={this.handleInputChange} type="radio" name="q3" value="l" />
+                Pepperoni Pizza and beer
+          </label>
+            </div>
 
             <label>
-              <input onChange={this.handleInputChange} type="radio" name="q3" value="c" />
-              Street tacos and a margarita
-          </label>
-          </div>
-          <div className="radio">
-            <label>
-              <input onChange={this.handleInputChange} type="radio" name="q3" value="b" />
-              Big Mac Meal Deal
-          </label>
-          </div>
-          <div className="radio">
-            <label>
-              <input onChange={this.handleInputChange} type="radio" name="q3" value="s" />
-              Vintage champagne with aged cheese plate
-          </label>
-          </div>
-          <div className="radio">
-            <label>
-              <input onChange={this.handleInputChange} type="radio" name="q3" value="l" />
-              Pepperoni Pizza and beer
-          </label>
-          </div>
-
-          <label>
-            4. How often do I clean my Home?
+              4. How often do I clean my Home?
          </label>
-          <div className="radio">
-            <label>
-              <input onChange={this.handleInputChange} type="radio" name="q4" value="c" />
-              Everyday I tidy up
+            <div className="radio">
+              <label>
+                <input onChange={this.handleInputChange} type="radio" name="q4" value="c" />
+                Everyday I tidy up
           </label>
-          </div>
-          <div className="radio">
-            <label>
-              <input onChange={this.handleInputChange} type="radio" name="q4" value="b" />
-              Monthly I speed clean
+            </div>
+            <div className="radio">
+              <label>
+                <input onChange={this.handleInputChange} type="radio" name="q4" value="b" />
+                Monthly I speed clean
           </label>
-          </div>
-          <div className="radio">
-            <label>
-              <input onChange={this.handleInputChange} type="radio" name="q4" value="s" />
-              Weekly I do a once over
+            </div>
+            <div className="radio">
+              <label>
+                <input onChange={this.handleInputChange} type="radio" name="q4" value="s" />
+                Weekly I do a once over
           </label>
-          </div>
-          <div className="radio">
-            <label>
-              <input onChange={this.handleInputChange} type="radio" name="q4" value="l" />
-              Clean? I hire a cleaning lady
+            </div>
+            <div className="radio">
+              <label>
+                <input onChange={this.handleInputChange} type="radio" name="q4" value="l" />
+                Clean? I hire a cleaning lady
           </label>
-          </div>
+            </div>
 
-          <label>
-            5. My favorite movie with dogs is..
+            <label>
+              5. My favorite movie with dogs is..
          </label>
-          <div className="radio">
-            <label>
-              <input onChange={this.handleInputChange} type="radio" name="q5" value="l" />
-              Marley and Me
+            <div className="radio">
+              <label>
+                <input onChange={this.handleInputChange} type="radio" name="q5" value="l" />
+                Marley and Me
           </label>
-          </div>
-          <div className="radio">
-            <label>
-              <input onChange={this.handleInputChange} type="radio" name="q5" value="c" />
-              Beverley Hills Chihuahua
+            </div>
+            <div className="radio">
+              <label>
+                <input onChange={this.handleInputChange} type="radio" name="q5" value="c" />
+                Beverley Hills Chihuahua
           </label>
-          </div>
-          <div className="radio">
-            <label>
-              <input onChange={this.handleInputChange} type="radio" name="q5" value="s" />
-              Secret Life of Pets
+            </div>
+            <div className="radio">
+              <label>
+                <input onChange={this.handleInputChange} type="radio" name="q5" value="s" />
+                Secret Life of Pets
           </label>
-          </div>
-          <div className="radio">
-            <label>
-              <input onChange={this.handleInputChange} type="radio" name="q5" value="b" />
-              Shiloh
+            </div>
+            <div className="radio">
+              <label>
+                <input onChange={this.handleInputChange} type="radio" name="q5" value="b" />
+                Shiloh
           </label>
-          </div>
+            </div>
 
-          <button className="btn btn-default" type="submit" >Submit</button>
+            <button className="btn btn-default" type="submit" >Submit</button>
+
+          </form>
+
          
-        </form>
-       
+        </Grid>
 
       </div>
-      
+
     );
   }
 

@@ -3,9 +3,7 @@
     position: absolute; 
      background-repeat: no-repeat;
      background-size: cover;
-     width: 100%; 
-     /* text-align: center; */
-    width:100%;
+     width:100%;
     color: black;
     /* height: 100vh; */
     height: max-content;

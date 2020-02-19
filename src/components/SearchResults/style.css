@@ -4,5 +4,9 @@ ul li{
 
 .dog-image{
     width: 500px;
+    border-radius: 50%
 }
 
+button{
+    background: #0995f5;
+}

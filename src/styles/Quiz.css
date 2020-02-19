@@ -9,9 +9,14 @@
     width: 100%;
     /* text-align: center; */
     color: black;
-    height: 100vh;
+    height: 100vh; 
+    /* height: max-content; */
     margin:0;
-    font-size: large;
+    font-size: medium;
+
+}
+.container .question{
+    font-weight: 700;
 }
 
 .h1over{

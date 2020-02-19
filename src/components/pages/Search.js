@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import Quiz from "../pages/Quiz"
 import SearchResults from "../SearchResults";
-
-// import Quiz from "./Quiz";
+import "../../styles/Search.css"
+import Grid from '@material-ui/core/Grid';
 
 class Search extends Component {
   state = {
@@ -16,56 +16,41 @@ class Search extends Component {
     description: ""
   };
 
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     search: "",
-  //   breed: "",
-  //   results: [],
-  //   error: "",
-  //   profile: "",
-  //   description:""
-
-  //     }
-  // }
-
-
-
-
+  
   breedprofile() {
     let breed = localStorage.getItem("breed");
     let profile = "";
     let description = "";
     let breedname = "";
-    console.log("****breedprofile***");
-    console.log(breed);
+    // console.log("****breedprofile***");
+    // console.log(breed);
 
 
     switch (breed) {
       case "shihtzu":
-        profile = "Your a Playful Cuddle Bug";
+        profile = "Prince/Princess";
         breedname = "Shih Tzu"
-        description = "You love luxury and lounging around ";
+        description = "Shih Tzu's love luxury and lounging around with only the finest of everything.  They are high maintenance and need daily grooming and daily brushing of their soft luxurious hair and monthly professional grooming appointments. Shih Tzu will be your loyal companion.  As a small dog bred to spend most of their day inside royal palaces, they make a great pet if you live in an apartment or lack a big backyard.";
         break;
       case "labrador":
-        profile = "Your a Jock"
+        profile = "Goofy Jock"
         breedname = "Labrador";
         description = "lab description";
         break;
       case "chihuahua":
-        profile = "Your a Princess/Prince";
+        profile = "Sassy Socialite";
         breedname = "Chihuaha";
-        description = "Chi description";
+        description = "Chihuahuas possess loyalty, charm, and big-dog attitude. Even tiny dogs require training, and without it this clever scamp will rule your household like a little Napoleon. Compact and confident, Chihuahuas are ideal city pets.";
         break;
       case "beagle":
-        profile = "Beagle";
-        breedname = "Labrador";
-        description = "lab description";
+        profile = "Playful LoveBug";
+        breedname = "Beagle";
+        description = " Beagles are loving and lovable, happy, and companionable—all qualities that make them excellent family dogs. No wonder that for years the Beagle has been the most popular hound dog among American pet owners. These are curious, clever, and energetic hounds who require plenty of playtime.";
         break;
       default:
-        profile = "Your a Playful Cuddle Bug";
+        profile = "Prince/Princess";
         breedname = "Shih Tzu"
-        description = "You love luxury and lounging around ";
+        description = "Shih Tzu's love luxury and lounging around with only the finest of everything.  They are high maintenance and need daily grooming and daily brushing of their soft luxurious hair and monthly professional grooming appointments. Shih Tzu will be your loyal companion.  As a small dog bred to spend most of their day inside royal palaces, they make a great pet if you live in an apartment or lack a big backyard.";
 
     }
     console.log(profile);
@@ -83,15 +68,7 @@ class Search extends Component {
 
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
   componentDidMount() {
-    console.log("*****Search component mount***")
-    // const breed = this.props.match.params.handle
-    // console.log(this.state.breed);
-    // console.log(this.breedpick);
-    // let thisbreedpick="shitzu";
-    // API.getDogsOfBreed(this.state.search)
-    //   .then(res => this.setState({ results: res.data.message }))
-    //   .catch(err => console.log(err));
-    // console.log(this.state.search);
+
     let setbreed = localStorage.getItem("breed");
     console.log(setbreed)
     // this.state.setState({search : setbreed})
@@ -119,16 +96,22 @@ class Search extends Component {
 
   render() {
     return (
-      <div>
-        {/* <Container style={{ minHeight: "80%" }}> */}
+      <div className="container">
+       
+      
+        <div className="search-wrapper">
         <h1 className="text-center">{this.state.breedname}</h1>
+        <Grid container justify="center">
         <p>{this.state.description}</p>
 
 
 
         <SearchResults results={this.state.results} />
-        {/* </Container> */}
+
+      </Grid>
+       </div>
       </div>
+
     );
   }
 }

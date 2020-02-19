@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Link, useHistory, Redirect } from "react-router-dom";
 import "../../styles/Quiz.css"
-//import M from 'materialize-css';
-// import { Button, Card, Row, Col } from 'react-materialize';
 import Search from "../pages/Search"
 import Grid from '@material-ui/core/Grid';
 import clsx from 'clsx';
@@ -32,12 +30,6 @@ class Quiz extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-
-    console.log("clicked submit handler");
-
-    // this.setState({
-    //   [this.state.breed] : this.calculateBreed()
-    // })
 
     let setBreed = this.calculateBreed();
     console.log("===retrurn from calcodgbreed")
@@ -165,13 +157,13 @@ class Quiz extends Component {
             <div className="radio">
               <label>
                 <input onChange={this.handleInputChange} type="radio" name="q2" value="l" />
-                A 5-mile run, and out to dinner
+                A 5-mile run, and out to dinner with friends
           </label>
             </div>
             <div className="radio">
               <label>
                 <input onChange={this.handleInputChange} type="radio" name="q2" value="c" />
-                Getting together with friends
+                A short walk and Happy Hour with your pals
           </label>
             </div>
             <div className="radio">
@@ -200,7 +192,7 @@ class Quiz extends Component {
             <div className="radio">
               <label>
                 <input onChange={this.handleInputChange} type="radio" name="q3" value="s" />
-                Vintage champagne with aged cheese plate
+                Vintage champagne with an aged cheese plate
           </label>
             </div>
             <div className="radio">
@@ -215,7 +207,7 @@ class Quiz extends Component {
          </label>
             <div className="radio">
               <label>
-                <input onChange={this.handleInputChange} type="radio" name="q4" value="c" />
+                <input onChange={this.handleInputChange} type="radio" name="q4" value="s" />
                 Everyday I tidy up
           </label>
             </div>
@@ -227,7 +219,7 @@ class Quiz extends Component {
             </div>
             <div className="radio">
               <label>
-                <input onChange={this.handleInputChange} type="radio" name="q4" value="s" />
+                <input onChange={this.handleInputChange} type="radio" name="q4" value="c" />
                 Weekly I do a once over
           </label>
             </div>

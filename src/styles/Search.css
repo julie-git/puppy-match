@@ -1,5 +1,5 @@
 .container{
-    background-image: url("../images/NoahRelax.jpg"); 
+    background-image: url("../images/NoahRun.jpg"); 
     /* position: absolute; */
     background-repeat: no-repeat;
     position: absolute;
@@ -14,10 +14,6 @@
     font-size: large;
 }
 
-.h1over{
-    text-align: center;
+.search-wrapper{
+    background: white;
 }
-
-
-
-

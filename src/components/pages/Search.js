@@ -4,6 +4,7 @@ import Quiz from "../pages/Quiz"
 import SearchResults from "../SearchResults";
 import "../../styles/Search.css"
 import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
 
 class Search extends Component {
   state = {
@@ -16,7 +17,7 @@ class Search extends Component {
     description: ""
   };
 
-  
+
   breedprofile() {
     let breed = localStorage.getItem("breed");
     let profile = "";
@@ -34,8 +35,8 @@ class Search extends Component {
         break;
       case "labrador":
         profile = "Goofy Jock"
-        breedname = "Labrador";
-        description = "lab description";
+        breedname = "Labrador Retriever";
+        description = "Labs are famously friendly. They are companionable housemates who bond with the whole family, and they socialize well with neighbor dogs and humans alike. But don’t mistake his easygoing personality for low energy: The Lab is an enthusiastic athlete that requires lots of exercise, like swimming and marathon games of fetch, to keep physically and mentally fit.";
         break;
       case "chihuahua":
         profile = "Sassy Socialite";
@@ -50,7 +51,7 @@ class Search extends Component {
       default:
         profile = "Prince/Princess";
         breedname = "Shih Tzu"
-        description = "Shih Tzu's love luxury and lounging around with only the finest of everything.  They are high maintenance and need daily grooming and daily brushing of their soft luxurious hair and monthly professional grooming appointments. Shih Tzu will be your loyal companion.  As a small dog bred to spend most of their day inside royal palaces, they make a great pet if you live in an apartment or lack a big backyard.";
+        description = "Shih Tzu's love luxury and lounging around with only the finest of everything. They are high maintenance and need daily grooming and daily brushing of their soft luxurious hair and monthly professional grooming appointments. Shih Tzu will be your loyal companion.  As a small dog bred to spend most of their day inside royal palaces, they make a great pet if you live in an apartment or lack a big backyard.";
 
     }
     console.log(profile);
@@ -89,27 +90,23 @@ class Search extends Component {
 
   }
 
-  // handleInputChange = event => {
-  //   this.setState({ search: event.target.value });
-  // };
+
 
 
   render() {
     return (
-      <div className="container">
-       
-      
+      <div className="search-container">
+
+
         <div className="search-wrapper">
-        <h1 className="text-center">{this.state.breedname}</h1>
-        <Grid container justify="center">
-        <p>{this.state.description}</p>
+          <h1 className="text-center">{this.state.breedname}</h1>
+          <Grid container justify="center" className="content-wrapper">
+            <p>{this.state.description}</p>
 
+            <SearchResults results={this.state.results} />
 
-
-        <SearchResults results={this.state.results} />
-
-      </Grid>
-       </div>
+          </Grid>
+        </div>
       </div>
 
     );

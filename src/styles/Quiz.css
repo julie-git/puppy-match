@@ -1,4 +1,4 @@
-.container{
+.quiz-container{
     background-image: url("../images/NoahRelax.jpg"); 
     /* position: absolute; */
     background-repeat: no-repeat;
@@ -9,11 +9,11 @@
     width: 100%;
     /* text-align: center; */
     color: black;
-    height: 100vh; 
-    /* height: max-content; */
+     /* height: 100vh;   */
+    height: max-content; 
     margin:0;
     font-size: medium;
-
+    padding-bottom: 100px;
 }
 .container .question{
     font-weight: 700;

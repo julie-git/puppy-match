@@ -101,7 +101,7 @@ class Quiz extends Component {
   render() {
     return (
 
-      <div className="container">
+      <div className="quiz-container">
         <div className="quiz-content">
           {this.state.redirectToNewPage && <Redirect to="/search" />}
           <h1 className="h1over">Pup Match Quiz</h1>

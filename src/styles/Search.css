@@ -15,11 +15,11 @@
 
 .search-wrapper{
     background: white;
-    width:50%;
+    width:60%;
     opacity: 1.0;
-    margin-left: 450px;
+    margin-left: 300px;
     margin-top: 50px;
-    height: 60%;
+    /* height: 400px; */
 }
 
 .search-wrapper h1{
@@ -28,18 +28,7 @@
 }
 
 
-.search-container .bg{
-    /* background-image: url("../images/NoahRun.jpg");  */
-    /* position: absolute; */
-    /* background-repeat: no-repeat;
-    position: absolute;
-    background-repeat: no-repeat;
-    background-size: cover;
-     width: 100%;
-     height: 100vh;
-     padding-bottom: 200px; */
-     /* opacity: .5; */
-}
+
 
 .content-wrapper{
     margin:30px;
@@ -50,8 +39,8 @@
 }
 
 .content-wrapper p{
-    margin-right: 30px;
-    font-size: large;
+    margin-right: 50px;
+    font-size: medium;
 }
 
 h1{

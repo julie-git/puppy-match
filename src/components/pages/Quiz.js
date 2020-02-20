@@ -12,6 +12,7 @@ class Quiz extends Component {
     q3: '',
     q4: '',
     q5: '',
+    formErrors: {question: ''},
     breed: '',
     redirectToNewPage: false
   }
@@ -82,8 +83,6 @@ class Quiz extends Component {
         pickBreed = "shihtzu";
 
     }
-
-
     return pickBreed;
   }
 
@@ -93,6 +92,7 @@ class Quiz extends Component {
 
       <div className="quiz-container">
         <div className="quiz-content">
+          
           {this.state.redirectToNewPage && <Redirect to="/search" />}
           <h1 className="h1over">Pup Match Quiz</h1>
           <Grid container justify="center">
@@ -103,25 +103,25 @@ class Quiz extends Component {
          </label>
                 <div className="radio">
                   <label>
-                    <input onChange={this.handleInputChange} type="radio" name="q1" value="c" />
+                    <input onChange={this.handleInputChange} required={true} type="radio" name="q1" value="c" />
                     Extra Small - I like to carry my pup in my purse or backpack
           </label>
                 </div>
                 <div className="radio">
                   <label>
-                    <input onChange={this.handleInputChange} type="radio" name="q1" value="s" />
+                    <input onChange={this.handleInputChange} required={true} type="radio" name="q1" value="s" />
                     Small - I want to be able to carry my pup around and snuggle up
           </label>
                 </div>
                 <div className="radio">
                   <label>
-                    <input onChange={this.handleInputChange} type="radio" name="q1" value="b" />
+                    <input onChange={this.handleInputChange} required={true} type="radio" name="q1" value="b" />
                     Medium - I want my pup to be active, but not too small
           </label>
                 </div>
                 <div className="radio">
                   <label>
-                    <input onChange={this.handleInputChange} type="radio" name="q1" value="l" />
+                    <input onChange={this.handleInputChange} required={true} type="radio" name="q1" value="l" />
                     Large - I want a big bundle of joy, more to love
           </label>
                 </div>
@@ -133,25 +133,25 @@ class Quiz extends Component {
                 <div className="radio">
 
                   <label>
-                    <input onChange={this.handleInputChange} type="radio" name="q2" value="s" />
+                    <input onChange={this.handleInputChange} required={true} type="radio" name="q2" value="s" />
                     A tall glass of wine, a good read, and snuggles with my pup
           </label>
                 </div>
                 <div className="radio">
                   <label>
-                    <input onChange={this.handleInputChange} type="radio" name="q2" value="l" />
+                    <input onChange={this.handleInputChange} required={true} type="radio" name="q2" value="l" />
                     A 5-mile run, and out to dinner with friends
           </label>
                 </div>
                 <div className="radio">
                   <label>
-                    <input onChange={this.handleInputChange} type="radio" name="q2" value="c" />
+                    <input onChange={this.handleInputChange} required={true} type="radio" name="q2" value="c" />
                     A short walk and Happy Hour with your pals
           </label>
                 </div>
                 <div className="radio">
                   <label>
-                    <input onChange={this.handleInputChange} type="radio" name="q2" value="b" />
+                    <input onChange={this.handleInputChange} required={true} type="radio" name="q2" value="b" />
                     A game of pickup basketball, beers with the guys
           </label>
                 </div>
@@ -163,25 +163,25 @@ class Quiz extends Component {
                 <div className="radio">
 
                   <label>
-                    <input onChange={this.handleInputChange} type="radio" name="q3" value="c" />
+                    <input onChange={this.handleInputChange} required={true} type="radio" name="q3" value="c" />
                     Street tacos and a margarita
           </label>
                 </div>
                 <div className="radio">
                   <label>
-                    <input onChange={this.handleInputChange} type="radio" name="q3" value="b" />
+                    <input onChange={this.handleInputChange} required={true} type="radio" name="q3" value="b" />
                     Big Mac Meal Deal
           </label>
                 </div>
                 <div className="radio">
                   <label>
-                    <input onChange={this.handleInputChange} type="radio" name="q3" value="s" />
+                    <input onChange={this.handleInputChange} required={true} type="radio" name="q3" value="s" />
                     Vintage champagne with an aged cheese plate
           </label>
                 </div>
                 <div className="radio">
                   <label>
-                    <input onChange={this.handleInputChange} type="radio" name="q3" value="l" />
+                    <input onChange={this.handleInputChange} required={true} type="radio" name="q3" value="l" />
                     Pepperoni Pizza and beer
           </label>
                 </div>
@@ -192,25 +192,25 @@ class Quiz extends Component {
          </label>
                 <div className="radio">
                   <label>
-                    <input onChange={this.handleInputChange} type="radio" name="q4" value="s" />
+                    <input onChange={this.handleInputChange} required={true} type="radio" name="q4" value="s" />
                     Everyday I tidy up
           </label>
                 </div>
                 <div className="radio">
                   <label>
-                    <input onChange={this.handleInputChange} type="radio" name="q4" value="b" />
+                    <input onChange={this.handleInputChange} required={true} type="radio" name="q4" value="b" />
                     Monthly I speed clean
           </label>
                 </div>
                 <div className="radio">
                   <label>
-                    <input onChange={this.handleInputChange} type="radio" name="q4" value="c" />
+                    <input onChange={this.handleInputChange} required={true} type="radio" name="q4" value="c" />
                     Weekly I do a once over
           </label>
                 </div>
                 <div className="radio">
                   <label>
-                    <input onChange={this.handleInputChange} type="radio" name="q4" value="l" />
+                    <input onChange={this.handleInputChange} required={true} type="radio" name="q4" value="l" />
                     Clean? I hire a cleaning lady
           </label>
                 </div>
@@ -221,25 +221,25 @@ class Quiz extends Component {
          </label>
                 <div className="radio">
                   <label>
-                    <input onChange={this.handleInputChange} type="radio" name="q5" value="l" />
+                    <input onChange={this.handleInputChange} required={true} type="radio" name="q5" value="l" />
                     Marley and Me
           </label>
                 </div>
                 <div className="radio">
                   <label>
-                    <input onChange={this.handleInputChange} type="radio" name="q5" value="c" />
+                    <input onChange={this.handleInputChange} required={true} type="radio" name="q5" value="c" />
                     Beverley Hills Chihuahua
           </label>
                 </div>
                 <div className="radio">
                   <label>
-                    <input onChange={this.handleInputChange} type="radio" name="q5" value="s" />
+                    <input onChange={this.handleInputChange} required={true} type="radio" name="q5" value="s" />
                     Secret Life of Pets
           </label>
                 </div>
                 <div className="radio">
                   <label>
-                    <input onChange={this.handleInputChange} type="radio" name="q5" value="b" />
+                    <input onChange={this.handleInputChange} required={true} type="radio" name="q5" value="b" />
                     Shiloh
           </label>
                 </div>

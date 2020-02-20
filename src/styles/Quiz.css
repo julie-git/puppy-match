@@ -15,8 +15,9 @@
     font-size: medium;
     padding-bottom: 100px;
 }
-.container .question{
+.quiz-container .question{
     font-weight: 700;
+    /* font-weight: bold; */
 }
 
 .h1over{

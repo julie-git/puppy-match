@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import Quiz from "../pages/Quiz"
+// import Quiz from "../pages/Quiz"
 import SearchResults from "../SearchResults";
 import "../../styles/Search.css"
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
+// import Box from '@material-ui/core/Box';
 
 class Search extends Component {
   state = {
@@ -54,8 +54,8 @@ class Search extends Component {
         description = "Shih Tzu's love luxury and lounging around with only the finest of everything. They are high maintenance and need daily grooming and daily brushing of their soft luxurious hair and monthly professional grooming appointments. Shih Tzu will be your loyal companion.  As a small dog bred to spend most of their day inside royal palaces, they make a great pet if you live in an apartment or lack a big backyard.";
 
     }
-    console.log(profile);
-    console.log(breedname);
+    // console.log(profile);
+    // console.log(breedname);
 
     this.setState({ profile: profile });
     this.setState({ breedname: breedname });
@@ -71,7 +71,7 @@ class Search extends Component {
   componentDidMount() {
 
     let setbreed = localStorage.getItem("breed");
-    console.log(setbreed)
+    // console.log(setbreed)
     // this.state.setState({search : setbreed})
 
     // API.getDogsOfBreed(this.state.search)
@@ -81,7 +81,7 @@ class Search extends Component {
           throw new Error(res.data.message);
         }
         this.setState({ results: res.data.message, error: "" });
-        console.log(this.state.results);
+        // console.log(this.state.results);
         this.setState({ results: this.state.results.slice(1, 2), error: "" });
         this.breedprofile();
 

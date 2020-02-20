@@ -23,6 +23,17 @@
     text-align: center;
 }
 
+button{
+    border-radius: 20px;
+    width: 200px;
+}
 
+.question{
+    margin-top: 10px;
+}
+
+.q-wrapper{
+    margin-bottom: 10px;
+}
 
 

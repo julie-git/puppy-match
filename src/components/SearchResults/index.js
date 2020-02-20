@@ -1,7 +1,6 @@
 import React from "react";
 import "./style.css";
-import Card from "react-materialize/lib/Card";
-import Search from "../../components/pages/Search"
+// import Search from "../../components/pages/Search"
 
 function SearchResults(props) {
 

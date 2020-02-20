@@ -5,6 +5,7 @@ import SearchResults from "../SearchResults";
 import "../../styles/Search.css"
 import Grid from '@material-ui/core/Grid';
 // import Box from '@material-ui/core/Box';
+import Roll from 'react-reveal/Roll';
 
 class Search extends Component {
   state = {
@@ -99,6 +100,7 @@ class Search extends Component {
 
 
         <div className="search-wrapper">
+        <Roll left>
           <h1 className="text-center">{this.state.breedname}</h1>
           <Grid container justify="center" className="content-wrapper">
             <p>{this.state.description}</p>
@@ -106,6 +108,7 @@ class Search extends Component {
             <SearchResults results={this.state.results} />
 
           </Grid>
+          </Roll>
         </div>
       </div>
 

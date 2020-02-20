@@ -1,17 +1,7 @@
 import React, { Component } from "react";
-import { Link, useHistory, Redirect } from "react-router-dom";
+import {  Redirect } from "react-router-dom";
 import "../../styles/Quiz.css";
-// import Search from "../pages/Search"
 import Grid from '@material-ui/core/Grid';
-// import clsx from 'clsx';
-// import { makeStyles } from '@material-ui/core/styles';
-
-// import Radio from '@material-ui/core/Radio';
-// import RadioGroup from '@material-ui/core/RadioGroup';
-// import FormControlLabel from '@material-ui/core/FormControlLabel';
-// import FormControl from '@material-ui/core/FormControl';
-// import FormLabel from '@material-ui/core/FormLabel';
-
 
 
 class Quiz extends Component {
@@ -254,7 +244,7 @@ class Quiz extends Component {
           </label>
                 </div>
               </div>
-              <button className="btn btn-default" type="submit" className="button hvr-grow"><i class="fas fa-paw"></i> Submit</button>
+              <button type="submit" className="button hvr-grow"><i class="fas fa-paw"></i> Submit</button>
             </form>
 
           </Grid>

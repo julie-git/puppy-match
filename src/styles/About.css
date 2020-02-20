@@ -1,5 +1,5 @@
 .header{
-    background-image: url("../images/NoahChloe.jpg"); 
+    background-image: url("../images/NoahChloe2.jpg"); 
     position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
@@ -8,6 +8,7 @@
     text-align: center;
     color: white;
     height: 100vh;
+    text-shadow: 3px 2px #899fa6;
 }
 
 .intro{

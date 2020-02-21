@@ -7,8 +7,8 @@
     background-size: cover;
      width: 100%;
     color: black;
-     /* height: 100vh;   */
-    height: max-content; 
+     height: 150vh;   
+    /* height: max-content;  */
     margin:0;
     font-size: medium;
     padding-bottom: 100px;

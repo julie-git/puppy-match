@@ -49,7 +49,8 @@ h1{
     margin-left: 30px;
 }
 
-.list-group-item img{
-     margin-left: 200px; 
-    /* margin-right: 80px; */
+.list-group-item{
+     /* margin-left: 200px;  */
+     display: flex;
+    justify-content: center;
 }

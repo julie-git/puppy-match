@@ -6,7 +6,7 @@ import "../../styles/Search.css"
 import Grid from '@material-ui/core/Grid';
 // import Box from '@material-ui/core/Box';
 import Roll from 'react-reveal/Roll';
-import { Paper, Box} from "@material-ui/core";
+import { Box} from "@material-ui/core";
 
 class Search extends Component {
   state = {

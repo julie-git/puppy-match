@@ -2,9 +2,9 @@ ul li{
     list-style-type: none;
 }
 
-.dog-image{
-    /* width: 500px; */
-    width: auto;
+ul li .dog-image{
+     width: 400px; 
+    /* width: auto; */
     /* border-radius: 50% */
 }
 

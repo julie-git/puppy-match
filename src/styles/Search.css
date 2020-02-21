@@ -5,8 +5,8 @@
      background-size: cover;
      width:100%;
     color: black;
-     /* height: 100vh;  */
-    height: max-content;
+     height: 100vh; 
+    /* height: max-content; */
     margin:0;
     font-size: large;
 }
@@ -15,9 +15,9 @@
 
 .search-wrapper{
     background: white;
-    width:60%;
+    width:50%;
     opacity: 1.0;
-    margin-left: 300px;
+    /* margin-left: 300px; */
     margin-top: 50px;
     box-shadow: 3px 3px 3px  #899fa6;
     /* height: 400px; */
@@ -33,14 +33,15 @@
 
 .content-wrapper{
     margin:30px;
+     max-width: 100%; 
 }
 
-.content-wrapper h1{
-    margin-left: 30px;
-}
+/* .content-wrapper h1{
+    /* margin-left: 30px; 
+} */
 
 .content-wrapper p{
-    margin-right: 50px;
+    /* margin-right: 50px; */
     font-size: medium;
 }
 
@@ -49,6 +50,6 @@ h1{
 }
 
 .list-group-item img{
-   
-    margin-right: 80px;
+     margin-left: 200px; 
+    /* margin-right: 80px; */
 }

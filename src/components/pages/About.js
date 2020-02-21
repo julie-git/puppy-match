@@ -22,7 +22,7 @@ function About() {
         <h2>Dog Breed Matchmaker</h2>
       
       
-      <Link to="/quiz"><button type="button" className="button hvr-grow">  <i class="fas fa-paw"></i> Take the Quiz! </button></Link>  
+      <Link to="/quiz"><button type="button" className="button hvr-grow">  <i className="fas fa-paw"></i> Take the Quiz! </button></Link>  
       </Zoom>
       </div>
       

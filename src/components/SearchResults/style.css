@@ -3,7 +3,8 @@ ul li{
 }
 
 .dog-image{
-    width: 500px;
+    /* width: 500px; */
+    width: auto;
     /* border-radius: 50% */
 }
 

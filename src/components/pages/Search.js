@@ -6,6 +6,7 @@ import "../../styles/Search.css"
 import Grid from '@material-ui/core/Grid';
 // import Box from '@material-ui/core/Box';
 import Roll from 'react-reveal/Roll';
+import { Paper, Box} from "@material-ui/core";
 
 class Search extends Component {
   state = {
@@ -62,9 +63,9 @@ class Search extends Component {
     this.setState({ breedname: breedname });
     this.setState({ description: description });
 
-    console.log(this.state.profile);
-    console.log(this.state.breedname);
-    console.log(this.state.description);
+    // console.log(this.state.profile);
+    // console.log(this.state.breedname);
+    // console.log(this.state.description);
     return profile;
   }
 
@@ -97,21 +98,33 @@ class Search extends Component {
   render() {
     return (
       <div className="search-container">
+      <Grid container spacing={3}>
 
-
+      <Grid item xs></Grid>
+      
         <div className="search-wrapper">
         <Roll left>
+        <Grid item xs={6} lg={12}>
+          <Box>
           <h1 className="text-center">{this.state.breedname}</h1>
-          <Grid container justify="center" className="content-wrapper">
+          <div className= "content-wrapper">
+          {/* <Grid item xs={6}> */}
+            
             <p>{this.state.description}</p>
 
             <SearchResults results={this.state.results} />
-
+          
+          {/* </Grid> */}
+          
+          </div>
+          </Box>
           </Grid>
           </Roll>
         </div>
+        
+        <Grid item xs></Grid>
+      </Grid>
       </div>
-
     );
   }
 }

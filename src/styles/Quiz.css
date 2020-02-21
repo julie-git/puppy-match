@@ -1,13 +1,11 @@
 .quiz-container{
-    background-image: url("../images/NoahRelax.jpg"); 
+    background-image: url("../images/NoahRestsm.jpg"); 
     /* position: absolute; */
     background-repeat: no-repeat;
     position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
-    /* width: 300px; */
-    width: 100%;
-    /* text-align: center; */
+     width: 100%;
     color: black;
      /* height: 100vh;   */
     height: max-content; 

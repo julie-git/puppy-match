@@ -244,7 +244,7 @@ class Quiz extends Component {
           </label>
                 </div>
               </div>
-              <button type="submit" className="button hvr-grow"><i class="fas fa-paw"></i> Submit</button>
+              <button type="submit" className="button hvr-grow"><i className="fas fa-paw"></i> Submit</button>
             </form>
 
           </Grid>

@@ -97,10 +97,13 @@ class Quiz extends Component {
         {/* <Grid container justify="center"> */}
        
        
-
+        <Grid item xs={12} direction="row" > 
         
           {this.state.redirectToNewPage && <Redirect to="/search" />}
           <h1 className="h1over">Pup Match Quiz</h1>
+          </Grid>
+          <Grid item xs={12} direction="row" > 
+          <Grid item xs direction="column" > </Grid>
           {/* <Grid container justify="center"> */}
             <form onSubmit={this.handleFormSubmit}>
               <div className="q-wrapper">
@@ -253,8 +256,9 @@ class Quiz extends Component {
               <button type="submit" className="button hvr-grow"><i className="fas fa-paw"></i> Submit</button>
             </form>
             
-        
+         </Grid>
         </div>
+        
         <Grid item xs direction="column" > </Grid>
         </Grid>
       </div>

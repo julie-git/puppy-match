@@ -1,12 +1,12 @@
 .search-container{
-    background-image: url("../images/NoahRun.jpg"); 
+    background-image: url("../images/NoahRunsm.jpg"); 
     position: absolute; 
      background-repeat: no-repeat;
      background-size: cover;
      width:auto;
     color: black;
-      height: 125vh;   
-      /* height: max-content;   */
+     height: 100vh;    
+     /* height: max-content;    */
     margin:0;
     font-size: large;
 }

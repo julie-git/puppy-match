@@ -7,12 +7,15 @@
     background-size: cover;
      width: 100%;
     color: black;
-     /* height: 150vh;    */
-     height: max-content;  
+      height: 90vh;    
+     /* height: max-content;   */
     margin:0;
     font-size: medium;
     padding-bottom: 100px;
+    /* overflow: hidden; */
 }
+
+
 .quiz-container .question{
     font-weight: 700;
     /* font-weight: bold; */

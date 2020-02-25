@@ -7,7 +7,7 @@
     background-size: cover;
      width: 100%;
     color: black;
-      height: 90vh;    
+      /* height: 90vh;     */
      /* height: max-content;   */
     margin:0;
     font-size: medium;
@@ -15,6 +15,7 @@
     /* overflow: hidden; */
     
 }
+
 
 
 

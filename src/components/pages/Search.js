@@ -98,7 +98,7 @@ class Search extends Component {
   render() {
     return (
       <div className="search-container">
-      <Grid container spacing={3}>
+      <Grid container>
 
       <Grid item xs></Grid>
       

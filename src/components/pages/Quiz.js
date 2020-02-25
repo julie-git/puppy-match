@@ -89,7 +89,7 @@ class Quiz extends Component {
 
   render() {
     return (
-
+        
       <div className="quiz-container">
     <Grid container  direction="row" justify="center" alignItems="center">
          <Grid item xs direction="column" > </Grid>

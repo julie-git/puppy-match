@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-// import Quiz from "../pages/Quiz"
 import SearchResults from "../SearchResults";
 import "../../styles/Search.css"
 import Grid from '@material-ui/core/Grid';
-// import Box from '@material-ui/core/Box';
 import Roll from 'react-reveal/Roll';
 import { Box} from "@material-ui/core";
+import { Redirect } from "react-router-dom";
 
 class Search extends Component {
   state = {
@@ -16,8 +15,21 @@ class Search extends Component {
     error: "",
     breedname: "",
     profile: "",
-    description: ""
+    description: "",
+    redirect: false
   };
+
+  setRedirect = () => {
+    this.setState({
+      redirect: true
+    })
+  }
+  
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to='/quiz' />
+    }
+  }
 
 
   breedprofile() {
@@ -118,12 +130,27 @@ class Search extends Component {
           
           </div>
           </Box>
+          
           </Grid>
           </Roll>
+        
+          <Grid container>
+
+        <Grid item xs></Grid>
+        <Grid item xs={2}>
+        {this.renderRedirect()}
+        <button onClick={this.setRedirect}><i className="fas fa-paw quiz-button"></i>Take the Quiz Again!</button>
+        </Grid>
+        <Grid item xs> </Grid>
+
+      </Grid>
+        
+       
         </div>
         
         <Grid item xs></Grid>
       </Grid>
+      
       </div>
     );
   }

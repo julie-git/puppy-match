@@ -4,7 +4,7 @@ import SearchResults from "../SearchResults";
 import "../../styles/Search.css"
 import Grid from '@material-ui/core/Grid';
 import Roll from 'react-reveal/Roll';
-import { Box} from "@material-ui/core";
+import { Box } from "@material-ui/core";
 import { Redirect } from "react-router-dom";
 
 class Search extends Component {
@@ -24,7 +24,7 @@ class Search extends Component {
       redirect: true
     })
   }
-  
+
   renderRedirect = () => {
     if (this.state.redirect) {
       return <Redirect to='/quiz' />
@@ -110,48 +110,47 @@ class Search extends Component {
   render() {
     return (
       <div className="search-container">
-      <Grid container>
+        <Grid container>
 
-      <Grid item xs></Grid>
-      
-        <div className="search-wrapper">
-        <Roll left>
-        <Grid item xs={6} lg={12}>
-          <Box>
-          <h1 className="text-center">{this.state.breedname}</h1>
-          <div className= "content-wrapper">
-          {/* <Grid item xs={6}> */}
-            
-            <p>{this.state.description}</p>
+          <Grid item xs></Grid>
 
-            <SearchResults results={this.state.results} />
-          
-          {/* </Grid> */}
-          
+          <div className="search-wrapper">
+            <Roll left>
+              <Grid item xs={6} lg={12}>
+                <Box>
+                  <h1 className="text-center">{this.state.breedname}</h1>
+                  <div className="content-wrapper">
+                    {/* <Grid item xs={6}> */}
+
+                    <p>{this.state.description}</p>
+
+                    <SearchResults results={this.state.results} />
+
+                    {/* </Grid> */}
+
+                  </div>
+                </Box>
+
+              </Grid>
+            </Roll>
           </div>
-          </Box>
-          
-          </Grid>
-          </Roll>
-        
-          <Grid container>
+                     
+          {/* <Grid container> */}
 
         <Grid item xs></Grid>
-        <Grid item xs={2}>
+        {/* <Grid item xs={2}>
         {this.renderRedirect()}
         <button onClick={this.setRedirect}><i className="fas fa-paw quiz-button"></i>Take the Quiz Again!</button>
         </Grid>
-        <Grid item xs> </Grid>
+        <Grid item xs> </Grid> */}
 
-      </Grid>
-        
-       
-        </div>
-        
-        <Grid item xs></Grid>
-      </Grid>
-      
-      </div>
+       </Grid> 
+         </div>
+
+          // <Grid item xs></Grid>
+      //   </Grid>
+
+      // </div>
     );
   }
 }

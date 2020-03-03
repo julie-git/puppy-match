@@ -4,6 +4,7 @@ ul li{
 
 ul li .dog-image{
      width: 400px; 
+     max-height: 600px;
     /* width: auto; */
     /* border-radius: 50% */
 }

@@ -133,9 +133,23 @@ class Search extends Component {
 
               </Grid>
             </Roll>
+
+        {/* begin button code */}
+             <Grid container>
+               <Grid item xs={5}></Grid>
+                 <Grid item xs={5}>
+            {this.renderRedirect()}
+        <button className="button hvr-grow" onClick={this.setRedirect}><i className="fas fa-paw quiz-button"></i>Take the Quiz Again!</button>
+          </Grid>
+          <Grid item xs={5}> </Grid>
+         </Grid>
+         
+         {/* end button code */}
           </div>
                      
-          {/* <Grid container> */}
+         
+
+         
 
         <Grid item xs></Grid>
         {/* <Grid item xs={2}>
